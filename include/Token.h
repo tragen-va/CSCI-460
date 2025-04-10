@@ -1,0 +1,87 @@
+#pragma once
+
+#include <iostream>
+#include <string>
+
+
+
+enum TOKEN {
+    BASE, CHARACTER, ESCAPED_CHARACTER, LETTER, DIGIT, HEX_DIGIT,
+    L_PAREN, R_PAREN, L_BRACKET, R_BRACKET, L_BRACE, R_BRACE,
+    DOUBLE_QUOTE, SINGLE_QUOTE, SEMICOLON, COMMA, ASSIGNMENT_OPERATOR,
+    PLUS, MINUS, ASTERISK, DIVIDE, MODULO, CARET,
+    LT, GT, LT_EQUAL, GT_EQUAL, BOOLEAN_AND, BOOLEAN_OR,
+    BOOLEAN_NOT, BOOLEAN_EQUAL, BOOLEAN_NOT_EQUAL,
+    BOOLEAN_TRUE, BOOLEAN_FALSE, STRING, DOUBLE_QUOTED_STRING,
+    SINGLE_QUOTED_STRING, LETTER_UNDERSCORE, LETTER_DIGIT_UNDERSCORE,
+    WHOLE_NUMBER, INTEGER, IDENTIFIER_TAIL, IDENTIFIER,
+    IDENTIFIER_LIST, IDENTIFIER_ARRAY_LIST,
+    IDENTIFIER_AND_IDENTIFIER_ARRAY_LIST, DATATYPE_SPECIFIER,
+    NUMERICAL_OPERAND, NUMERICAL_OPERATOR, BOOLEAN_OPERATOR,
+    EQUALITY_EXPRESSION, RELATIONAL_EXPRESSION,
+    NUMERICAL_EXPRESSION, BOOLEAN_EXPRESSION,
+    INITIALIZATION_EXPRESSION, EXPRESSION, SELECTION_STATEMENT,
+    ITERATION_STATEMENT, ASSIGNMENT_STATEMENT, PRINTF_STATEMENT,
+    GETCHAR_FUNCTION, USER_DEFINED_FUNCTION, DECLARATION_STATEMENT,
+    RETURN_STATEMENT, STATEMENT, COMPOUND_STATEMENT, BLOCK_STATEMENT,
+    PARAMETER_LIST, FUNCTION_DECLARATION, PROCEDURE_DECLARATION, 
+    MAIN_PROCEDURE, PROGRAM, EXPRESSION_STATEMENT, ASSIGNMENT_EXPRESSION,
+    USER_DEFINED_STATEMENT, CHARACTOR, ESCAPED_CHARACTOR, FUNCTION, PROCEDURE,
+    DATA_TYPE
+     
+};
+
+
+
+
+class Token {
+
+    TOKEN type;
+    int lineNum;
+    Token* next;
+
+
+
+public:
+    std::string token;
+
+
+
+
+Token(TOKEN _type, int _lineNum, std::string _token, Token* _next) : 
+    type(_type), lineNum(_lineNum), token(_token), next(_next) {}
+
+Token(TOKEN _type, int _lineNum, std::string _token) : 
+    type(_type), lineNum(_lineNum), token(_token) {
+    next = nullptr;
+}
+
+friend std::ostream& operator<<(std::ostream& out, const Token &t);
+
+
+void setType(TOKEN _type);
+
+
+void setLineNum(int _lineNum);
+
+void setToken(std::string _token);
+
+
+void setNext(Token* _next);
+
+Token* getNext();
+
+int getLineNum();
+
+TOKEN getType();
+
+std::string typeToStr() const;
+
+
+};
+
+
+
+
+
+
