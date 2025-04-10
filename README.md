@@ -1,5 +1,6 @@
-# CSCI-460 Programming Assignments Repository
+# Interpreter From Scratch
 
+#### CSCI-460 Programming Assignments Repository
 This repository contains programming assignments for CSCI-460. Each assignment involves implementing components that will eventualy lead to a fully fledged interpreter for a c-style language.
 
 ## Assignments
