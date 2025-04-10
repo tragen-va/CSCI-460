@@ -10,7 +10,7 @@ cd "$PROJECT_ROOT" || exit 1
 
 # Build 
 if make; then
-    echo "Build succeeded\n\n"
+    echo -e "Build succeeded\n"
 
 else
     echo "Build failed. Exiting."
