@@ -24,4 +24,41 @@ Extend the parser to generate an Abstract Syntax Tree (AST) from the CST. Boolea
 Develop an interpreter that executes programs written in the C-like language. The interpreter should track variables, values, and control flow while handling syntax and run-time errors.
 
 ---
+## Usage
+  - ./program [inputFile] [outputFile(for part 1)] [part]
+  - [part] 0 = all
+  - [part] 1 = ouput file with comments removed
+  - [part] 2 = print token list
+  - [part] 3 = print CST
+  - [part] 4 = print Symbol Table
+
+## How to run 
+1. **Clone the Repository**
+
+   Clone the repo using SSH and move into the project directory:
+   ```bash
+   git clone https://github.com/tragen-va/CSCI-460.git
+   cd your-repo
+
+2. **Build The project**
+
+   Run this command in root directory:
+   ```bash
+   make
+   
+3. **Run The program**
+
+   Ether run the test script(only for part 1 right now):
+   ```bash
+   ./test/testScript 
+  
+
+Or run the program with one of the test input files
+   ```bash
+   ./parser test/testFiles/programming_assignment_4-test_file_4.c out 4
+  ```
+
+### Test files 
+    - sample input files /test/testFiles/programming_assignment{part}-test_file_{number}.c
+    - sample ouput files can be found in test/solutionFiles/ and may be .c, .txt, or .pdf depeding on the part
 
